@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF47114F22E9FDF5006736DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47114E22E9FDF5006736DC /* AppDelegate.swift */; };
+		CF47115122E9FDF5006736DC /* EmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47115022E9FDF5006736DC /* EmployeeListViewController.swift */; };
+		CF47115422E9FDF5006736DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF47115222E9FDF5006736DC /* Main.storyboard */; };
+		CF47115622E9FDF6006736DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF47115522E9FDF6006736DC /* Assets.xcassets */; };
+		CF47115922E9FDF6006736DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF47115722E9FDF6006736DC /* LaunchScreen.storyboard */; };
+		CF47116522EA02DE006736DC /* MoonCascadeEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47116422EA02DE006736DC /* MoonCascadeEndPoint.swift */; };
+		CF47116822EA0405006736DC /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47116722EA0405006736DC /* HTTPTask.swift */; };
+		CF47116A22EA0442006736DC /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47116922EA0442006736DC /* HTTPMethod.swift */; };
+		CF47116C22EA04E9006736DC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47116B22EA04E9006736DC /* Router.swift */; };
+		CF47116E22EA0533006736DC /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47116D22EA0533006736DC /* NetworkLogger.swift */; };
+		CF47117022EA055E006736DC /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47116F22EA055E006736DC /* EndPointType.swift */; };
+		CF47117322EA05C6006736DC /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47117222EA05C6006736DC /* ParameterEncoding.swift */; };
+		CF47117522EA062F006736DC /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47117422EA062F006736DC /* JSONParameterEncoder.swift */; };
+		CF47117822EA0885006736DC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47117722EA0885006736DC /* NetworkManager.swift */; };
+		CF47117A22EA08F9006736DC /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47117922EA08F9006736DC /* NetworkResponse.swift */; };
+		CF47117C22EA0B92006736DC /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47117B22EA0B92006736DC /* URLParameterEncoder.swift */; };
+		CF47117E22EA0BCA006736DC /* URLParameterEncoderJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47117D22EA0BCA006736DC /* URLParameterEncoderJSON.swift */; };
+		CF47118122EA145C006736DC /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47118022EA145C006736DC /* Employee.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CF47114B22E9FDF5006736DC /* Mooncascade-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mooncascade-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF47114E22E9FDF5006736DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CF47115022E9FDF5006736DC /* EmployeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewController.swift; sourceTree = "<group>"; };
+		CF47115322E9FDF5006736DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF47115522E9FDF6006736DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF47115822E9FDF6006736DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF47115A22E9FDF6006736DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF47116422EA02DE006736DC /* MoonCascadeEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonCascadeEndPoint.swift; sourceTree = "<group>"; };
+		CF47116722EA0405006736DC /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		CF47116922EA0442006736DC /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		CF47116B22EA04E9006736DC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		CF47116D22EA0533006736DC /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		CF47116F22EA055E006736DC /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		CF47117222EA05C6006736DC /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		CF47117422EA062F006736DC /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		CF47117722EA0885006736DC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CF47117922EA08F9006736DC /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		CF47117B22EA0B92006736DC /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		CF47117D22EA0BCA006736DC /* URLParameterEncoderJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoderJSON.swift; sourceTree = "<group>"; };
+		CF47118022EA145C006736DC /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF47114822E9FDF5006736DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF47114222E9FDF5006736DC = {
+			isa = PBXGroup;
+			children = (
+				CF47114D22E9FDF5006736DC /* Mooncascade-Test */,
+				CF47114C22E9FDF5006736DC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF47114C22E9FDF5006736DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF47114B22E9FDF5006736DC /* Mooncascade-Test.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF47114D22E9FDF5006736DC /* Mooncascade-Test */ = {
+			isa = PBXGroup;
+			children = (
+				CF47117F22EA1447006736DC /* Models */,
+				CF47116222EA0163006736DC /* Network */,
+				CF47116122EA014D006736DC /* ViewControllers */,
+				CF47118222EA1868006736DC /* Storyboards */,
+				CF47114E22E9FDF5006736DC /* AppDelegate.swift */,
+				CF47115522E9FDF6006736DC /* Assets.xcassets */,
+				CF47115A22E9FDF6006736DC /* Info.plist */,
+			);
+			path = "Mooncascade-Test";
+			sourceTree = "<group>";
+		};
+		CF47116122EA014D006736DC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF47115022E9FDF5006736DC /* EmployeeListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CF47116222EA0163006736DC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CF47117622EA086E006736DC /* Manager */,
+				CF47116322EA023C006736DC /* EndPoint */,
+				CF47117122EA05A3006736DC /* Encoding */,
+				CF47116622EA03D5006736DC /* Service */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CF47116322EA023C006736DC /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				CF47116422EA02DE006736DC /* MoonCascadeEndPoint.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		CF47116622EA03D5006736DC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CF47116722EA0405006736DC /* HTTPTask.swift */,
+				CF47116922EA0442006736DC /* HTTPMethod.swift */,
+				CF47116B22EA04E9006736DC /* Router.swift */,
+				CF47116D22EA0533006736DC /* NetworkLogger.swift */,
+				CF47116F22EA055E006736DC /* EndPointType.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CF47117122EA05A3006736DC /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				CF47117222EA05C6006736DC /* ParameterEncoding.swift */,
+				CF47117422EA062F006736DC /* JSONParameterEncoder.swift */,
+				CF47117B22EA0B92006736DC /* URLParameterEncoder.swift */,
+				CF47117D22EA0BCA006736DC /* URLParameterEncoderJSON.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		CF47117622EA086E006736DC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CF47117722EA0885006736DC /* NetworkManager.swift */,
+				CF47117922EA08F9006736DC /* NetworkResponse.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		CF47117F22EA1447006736DC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CF47118022EA145C006736DC /* Employee.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CF47118222EA1868006736DC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CF47115222E9FDF5006736DC /* Main.storyboard */,
+				CF47115722E9FDF6006736DC /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF47114A22E9FDF5006736DC /* Mooncascade-Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF47115D22E9FDF6006736DC /* Build configuration list for PBXNativeTarget "Mooncascade-Test" */;
+			buildPhases = (
+				CF47114722E9FDF5006736DC /* Sources */,
+				CF47114822E9FDF5006736DC /* Frameworks */,
+				CF47114922E9FDF5006736DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mooncascade-Test";
+			productName = "Mooncascade-Test";
+			productReference = CF47114B22E9FDF5006736DC /* Mooncascade-Test.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF47114322E9FDF5006736DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Hassaan Fayyaz Ahmed";
+				TargetAttributes = {
+					CF47114A22E9FDF5006736DC = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = CF47114622E9FDF5006736DC /* Build configuration list for PBXProject "Mooncascade-Test" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF47114222E9FDF5006736DC;
+			productRefGroup = CF47114C22E9FDF5006736DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF47114A22E9FDF5006736DC /* Mooncascade-Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF47114922E9FDF5006736DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF47115922E9FDF6006736DC /* LaunchScreen.storyboard in Resources */,
+				CF47115622E9FDF6006736DC /* Assets.xcassets in Resources */,
+				CF47115422E9FDF5006736DC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF47114722E9FDF5006736DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF47117522EA062F006736DC /* JSONParameterEncoder.swift in Sources */,
+				CF47117322EA05C6006736DC /* ParameterEncoding.swift in Sources */,
+				CF47117022EA055E006736DC /* EndPointType.swift in Sources */,
+				CF47116E22EA0533006736DC /* NetworkLogger.swift in Sources */,
+				CF47117822EA0885006736DC /* NetworkManager.swift in Sources */,
+				CF47117A22EA08F9006736DC /* NetworkResponse.swift in Sources */,
+				CF47117E22EA0BCA006736DC /* URLParameterEncoderJSON.swift in Sources */,
+				CF47116822EA0405006736DC /* HTTPTask.swift in Sources */,
+				CF47115122E9FDF5006736DC /* EmployeeListViewController.swift in Sources */,
+				CF47117C22EA0B92006736DC /* URLParameterEncoder.swift in Sources */,
+				CF47116522EA02DE006736DC /* MoonCascadeEndPoint.swift in Sources */,
+				CF47116A22EA0442006736DC /* HTTPMethod.swift in Sources */,
+				CF47116C22EA04E9006736DC /* Router.swift in Sources */,
+				CF47118122EA145C006736DC /* Employee.swift in Sources */,
+				CF47114F22E9FDF5006736DC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CF47115222E9FDF5006736DC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF47115322E9FDF5006736DC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CF47115722E9FDF6006736DC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF47115822E9FDF6006736DC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF47115B22E9FDF6006736DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CF47115C22E9FDF6006736DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF47115E22E9FDF6006736DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "Mooncascade-Test/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Hassaan.Mooncascade-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF47115F22E9FDF6006736DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "Mooncascade-Test/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Hassaan.Mooncascade-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF47114622E9FDF5006736DC /* Build configuration list for PBXProject "Mooncascade-Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF47115B22E9FDF6006736DC /* Debug */,
+				CF47115C22E9FDF6006736DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF47115D22E9FDF6006736DC /* Build configuration list for PBXNativeTarget "Mooncascade-Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF47115E22E9FDF6006736DC /* Debug */,
+				CF47115F22E9FDF6006736DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF47114322E9FDF5006736DC /* Project object */;
+}
