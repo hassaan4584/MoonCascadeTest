@@ -25,6 +25,7 @@
 		CF47117C22EA0B92006736DC /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47117B22EA0B92006736DC /* URLParameterEncoder.swift */; };
 		CF47117E22EA0BCA006736DC /* URLParameterEncoderJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47117D22EA0BCA006736DC /* URLParameterEncoderJSON.swift */; };
 		CF47118122EA145C006736DC /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47118022EA145C006736DC /* Employee.swift */; };
+		CFBD4A2D22EC5C8B00526FD2 /* EmployeeTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD4A2C22EC5C8B00526FD2 /* EmployeeTVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		CF47117B22EA0B92006736DC /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		CF47117D22EA0BCA006736DC /* URLParameterEncoderJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoderJSON.swift; sourceTree = "<group>"; };
 		CF47118022EA145C006736DC /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		CFBD4A2C22EC5C8B00526FD2 /* EmployeeTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		CF47116122EA014D006736DC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CFBD4A2B22EC5C5A00526FD2 /* TableviewCells */,
 				CF47115022E9FDF5006736DC /* EmployeeListViewController.swift */,
 			);
 			path = ViewControllers;
@@ -165,6 +168,14 @@
 				CF47115722E9FDF6006736DC /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CFBD4A2B22EC5C5A00526FD2 /* TableviewCells */ = {
+			isa = PBXGroup;
+			children = (
+				CFBD4A2C22EC5C8B00526FD2 /* EmployeeTVCell.swift */,
+			);
+			path = TableviewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +258,7 @@
 				CF47117E22EA0BCA006736DC /* URLParameterEncoderJSON.swift in Sources */,
 				CF47116822EA0405006736DC /* HTTPTask.swift in Sources */,
 				CF47115122E9FDF5006736DC /* EmployeeListViewController.swift in Sources */,
+				CFBD4A2D22EC5C8B00526FD2 /* EmployeeTVCell.swift in Sources */,
 				CF47117C22EA0B92006736DC /* URLParameterEncoder.swift in Sources */,
 				CF47116522EA02DE006736DC /* MoonCascadeEndPoint.swift in Sources */,
 				CF47116A22EA0442006736DC /* HTTPMethod.swift in Sources */,

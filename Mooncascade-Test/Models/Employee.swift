@@ -8,10 +8,21 @@
 
 import Foundation
 
+enum EmployeePostion: String {
+    case iOS    = "IOS"
+    case android = "ANDROID"
+    case web    = "WEB"
+    case pm     = "PM"
+    case tester = "TESTER"
+    case sales  = "SALES"
+    case other  = "OTHER"
+}
+
 // MARK: - Employee
 
 struct EmployeeContainer: Decodable {
     let employeeList: [Employee]
+    let groupedEmployeeList : [EmployeePostion: [Employee]]
     
     enum CodingKeys: String, CodingKey {
         case employeeList = "employees"
@@ -21,19 +32,22 @@ struct EmployeeContainer: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         employeeList = try container.decode([Employee].self, forKey: .employeeList)
         
+        groupedEmployeeList = Dictionary(grouping: employeeList) { $0.position }
     }
 }
 
 struct Employee: Decodable {
-    let fname: String
-    let lname: String
-    let position: String
+    let fname:  String
+    let lname:  String
+    let position:   EmployeePostion
+    let projects:   [String]?
     let contactDetails: ContactDetails
     
     enum CodingKeys: String, CodingKey {
         case fname = "fname"
         case lname = "lname"
         case position = "position"
+        case projects = "projects"
         case contactDetails = "contact_details"
     }
     
@@ -41,8 +55,20 @@ struct Employee: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         fname = try container.decode(String.self, forKey: .fname)
         lname = try container.decode(String.self, forKey: .lname)
-        position = try container.decode(String.self, forKey: .position)
+        projects = try container.decodeIfPresent([String].self, forKey: .projects)
         contactDetails = try container.decode(ContactDetails.self, forKey: .contactDetails)
+        
+        let post = try container.decode(String.self, forKey: .position)
+        position = EmployeePostion.init(rawValue: post) ?? EmployeePostion.other
+
+    }
+    
+    /// LastName + FirstName
+    var completeName: String {
+        get {
+            let name = self.lname + " " + self.fname
+            return name
+        }
     }
 }
 

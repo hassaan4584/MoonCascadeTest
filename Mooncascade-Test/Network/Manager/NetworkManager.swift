@@ -18,7 +18,7 @@ struct NetworkManager {
     
     
     
-    func getHomePage(completion: @escaping (_ employeeList  : [Employee]?,_ error: String?)->()) {
+    func getEmployeeList(completion: @escaping (_ employeeContainer: EmployeeContainer?,_ error: String?)->()) {
         let employeeRequet = MoonCascadeApi.getEmployeeList
         router.request(employeeRequet) { data, response, error in
             
@@ -39,7 +39,7 @@ struct NetworkManager {
                     do {
                         let apiResponse = try JSONDecoder().decode(EmployeeContainer.self, from: responseData)
                         print("completion(apiResponse.homepage_sections,nil)")
-                        completion(apiResponse.employeeList, nil)
+                        completion(apiResponse, nil)
                         return
                     } catch {
                         print("completion(nil, NetworkResponse.unableToDecode.rawValue)")

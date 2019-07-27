@@ -20,6 +20,35 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IbF-OB-Q6t">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EmployeeTVCell" rowHeight="75" id="nVO-ce-jlb" customClass="EmployeeTVCell" customModule="Mooncascade_Test" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nVO-ce-jlb" id="ln2-eB-9RN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Appleased" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wE0-Bq-Odw">
+                                                    <rect key="frame" x="15" y="15" width="130.5" height="44.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" priority="250" constant="25" id="GFN-e7-hMe"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wE0-Bq-Odw" firstAttribute="top" secondItem="ln2-eB-9RN" secondAttribute="top" constant="15" id="7if-2e-G26"/>
+                                                <constraint firstItem="wE0-Bq-Odw" firstAttribute="leading" secondItem="ln2-eB-9RN" secondAttribute="leading" constant="15" id="kdd-hf-VCy"/>
+                                                <constraint firstAttribute="bottom" secondItem="wE0-Bq-Odw" secondAttribute="bottom" constant="15" id="tHO-Vi-n6U"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="wE0-Bq-Odw" id="sPi-bY-wbu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="2u8-88-EnE"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="QhL-SI-9AH"/>
