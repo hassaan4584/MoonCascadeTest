@@ -26,6 +26,7 @@
 		CF47117E22EA0BCA006736DC /* URLParameterEncoderJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47117D22EA0BCA006736DC /* URLParameterEncoderJSON.swift */; };
 		CF47118122EA145C006736DC /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47118022EA145C006736DC /* Employee.swift */; };
 		CFBD4A2D22EC5C8B00526FD2 /* EmployeeTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD4A2C22EC5C8B00526FD2 /* EmployeeTVCell.swift */; };
+		CFBD4A2F22EDB29500526FD2 /* EmployeeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD4A2E22EDB29500526FD2 /* EmployeeDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		CF47117D22EA0BCA006736DC /* URLParameterEncoderJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoderJSON.swift; sourceTree = "<group>"; };
 		CF47118022EA145C006736DC /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		CFBD4A2C22EC5C8B00526FD2 /* EmployeeTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTVCell.swift; sourceTree = "<group>"; };
+		CFBD4A2E22EDB29500526FD2 /* EmployeeDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				CFBD4A2B22EC5C5A00526FD2 /* TableviewCells */,
 				CF47115022E9FDF5006736DC /* EmployeeListViewController.swift */,
+				CFBD4A2E22EDB29500526FD2 /* EmployeeDetailsVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			files = (
 				CF47117522EA062F006736DC /* JSONParameterEncoder.swift in Sources */,
 				CF47117322EA05C6006736DC /* ParameterEncoding.swift in Sources */,
+				CFBD4A2F22EDB29500526FD2 /* EmployeeDetailsVC.swift in Sources */,
 				CF47117022EA055E006736DC /* EndPointType.swift in Sources */,
 				CF47116E22EA0533006736DC /* NetworkLogger.swift in Sources */,
 				CF47117822EA0885006736DC /* NetworkManager.swift in Sources */,

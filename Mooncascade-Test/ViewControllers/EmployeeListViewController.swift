@@ -125,9 +125,27 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        if let keys = self.groupedEmployeeList?.keys.sorted(by: {$0.rawValue < $1.rawValue}) {
+            
+            for (index, key) in keys.enumerated() {
+                if index == indexPath.section {
+                    let employee = self.groupedEmployeeList?[key]?[indexPath.row]
+                    self.performSegue(withIdentifier: "employeeListToEmployeeDetailSegue", sender: employee)
+                }
+            }
+        }
+
     }
     
     
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destVC = segue.destination as? EmployeeDetailsVC, let employee = sender as? Employee {
+            destVC.employee = employee
+            
+        }
+    }
 
 }
 
