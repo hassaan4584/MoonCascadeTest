@@ -20,6 +20,7 @@ class EmployeeDetailsVC: UIViewController {
     @IBOutlet weak var phoneNoLabel: UILabel!
     @IBOutlet weak var positionLabel: UILabel!
     
+    @IBOutlet weak var viewContactButton: UIButton!
     
     var employee: Employee?
     
@@ -41,6 +42,9 @@ class EmployeeDetailsVC: UIViewController {
         self.phoneNoLabel.text = employee.contactDetails.phone
         self.positionLabel.text = employee.position.rawValue.uppercased()
         
+        if let contacts = Utils.getAllContacts() {
+            self.viewContactButton.isHidden = !contacts.contains(employee.completeName)
+        }
     }
     
 
@@ -54,4 +58,9 @@ class EmployeeDetailsVC: UIViewController {
     }
     */
 
+    
+    // MARK: User Interaction
+    
+    @IBAction func viewContactButtonPressed(_ sender: UIButton) {
+    }
 }

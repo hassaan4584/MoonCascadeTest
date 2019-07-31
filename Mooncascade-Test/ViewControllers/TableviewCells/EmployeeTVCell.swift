@@ -11,16 +11,26 @@ import UIKit
 class EmployeeTVCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var viewContactButton: UIButton!
+    
+    var onViewContactPressed: (()-> Void)?
     
     var employee: Employee? {
         didSet {
             self.nameLabel.text = self.employee?.completeName
+            
+            if let contacts = Utils.getAllContacts(), let employee = self.employee {
+                self.viewContactButton.isHidden = !contacts.contains(employee.completeName)
+            }
+
         }
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.viewContactButton.addTarget(self, action: #selector(viewContactButtonPressed(_:)), for: .touchUpInside)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,4 +39,10 @@ class EmployeeTVCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func viewContactButtonPressed(_ sender: UIButton){
+        if let onViewContactPressed = self.onViewContactPressed {
+            onViewContactPressed()
+        }
+    }
+    
 }

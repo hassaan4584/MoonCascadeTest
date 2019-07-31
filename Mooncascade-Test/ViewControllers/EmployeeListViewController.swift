@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Contacts
 
 class EmployeeListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -105,13 +106,21 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell = UITableViewCell.init()
+        let cell: UITableViewCell = UITableViewCell.init()
         if let employeeCell = tableView.dequeueReusableCell(withIdentifier: "EmployeeTVCell", for: indexPath) as? EmployeeTVCell {
             if let keys = self.groupedEmployeeList?.keys.sorted(by: {$0.rawValue < $1.rawValue}) {
 
                 for (index, key) in keys.enumerated() {
                     if index == indexPath.section {
-                        employeeCell.employee = self.groupedEmployeeList?[key]?[indexPath.row]
+                        let employee = self.groupedEmployeeList?[key]?[indexPath.row]
+                        employeeCell.employee = employee
+                        
+                        employeeCell.onViewContactPressed = { [weak self] in
+                            if let employee = employee {
+                                self?.openContactDetailPage(forEmployee: employee)
+                                print(employee.completeName)
+                            }
+                        }
                         return employeeCell
                     }
                 }
@@ -143,8 +152,11 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destVC = segue.destination as? EmployeeDetailsVC, let employee = sender as? Employee {
             destVC.employee = employee
-            
         }
+    }
+    
+    func openContactDetailPage(forEmployee: Employee) {
+        
     }
 
 }

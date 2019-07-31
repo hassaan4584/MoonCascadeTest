@@ -25,8 +25,10 @@
 		CF47117C22EA0B92006736DC /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47117B22EA0B92006736DC /* URLParameterEncoder.swift */; };
 		CF47117E22EA0BCA006736DC /* URLParameterEncoderJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47117D22EA0BCA006736DC /* URLParameterEncoderJSON.swift */; };
 		CF47118122EA145C006736DC /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47118022EA145C006736DC /* Employee.swift */; };
+		CF872CB422F20A2D0052AE04 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF872CB322F20A2D0052AE04 /* Extensions.swift */; };
 		CFBD4A2D22EC5C8B00526FD2 /* EmployeeTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD4A2C22EC5C8B00526FD2 /* EmployeeTVCell.swift */; };
 		CFBD4A2F22EDB29500526FD2 /* EmployeeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD4A2E22EDB29500526FD2 /* EmployeeDetailsVC.swift */; };
+		CFBD4A3322EDC37100526FD2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD4A3222EDC37100526FD2 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,8 +52,10 @@
 		CF47117B22EA0B92006736DC /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		CF47117D22EA0BCA006736DC /* URLParameterEncoderJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoderJSON.swift; sourceTree = "<group>"; };
 		CF47118022EA145C006736DC /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		CF872CB322F20A2D0052AE04 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CFBD4A2C22EC5C8B00526FD2 /* EmployeeTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTVCell.swift; sourceTree = "<group>"; };
 		CFBD4A2E22EDB29500526FD2 /* EmployeeDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsVC.swift; sourceTree = "<group>"; };
+		CFBD4A3222EDC37100526FD2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 		CF47114D22E9FDF5006736DC /* Mooncascade-Test */ = {
 			isa = PBXGroup;
 			children = (
+				CFBD4A3022EDC31900526FD2 /* Application */,
 				CF47117F22EA1447006736DC /* Models */,
 				CF47116222EA0163006736DC /* Network */,
 				CF47116122EA014D006736DC /* ViewControllers */,
@@ -181,6 +186,23 @@
 			path = TableviewCells;
 			sourceTree = "<group>";
 		};
+		CFBD4A3022EDC31900526FD2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				CFBD4A3122EDC32900526FD2 /* Utils */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		CFBD4A3122EDC32900526FD2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CFBD4A3222EDC37100526FD2 /* Utils.swift */,
+				CF872CB322F20A2D0052AE04 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -259,10 +281,12 @@
 				CF47116E22EA0533006736DC /* NetworkLogger.swift in Sources */,
 				CF47117822EA0885006736DC /* NetworkManager.swift in Sources */,
 				CF47117A22EA08F9006736DC /* NetworkResponse.swift in Sources */,
+				CF872CB422F20A2D0052AE04 /* Extensions.swift in Sources */,
 				CF47117E22EA0BCA006736DC /* URLParameterEncoderJSON.swift in Sources */,
 				CF47116822EA0405006736DC /* HTTPTask.swift in Sources */,
 				CF47115122E9FDF5006736DC /* EmployeeListViewController.swift in Sources */,
 				CFBD4A2D22EC5C8B00526FD2 /* EmployeeTVCell.swift in Sources */,
+				CFBD4A3322EDC37100526FD2 /* Utils.swift in Sources */,
 				CF47117C22EA0B92006736DC /* URLParameterEncoder.swift in Sources */,
 				CF47116522EA02DE006736DC /* MoonCascadeEndPoint.swift in Sources */,
 				CF47116A22EA0442006736DC /* HTTPMethod.swift in Sources */,

@@ -37,15 +37,26 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Io-xk-m4d">
+                                                    <rect key="frame" x="240" y="5" width="120" height="64.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="7RU-dv-1Kb"/>
+                                                    </constraints>
+                                                    <state key="normal" title="View Contact"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="wE0-Bq-Odw" firstAttribute="top" secondItem="ln2-eB-9RN" secondAttribute="top" constant="15" id="7if-2e-G26"/>
+                                                <constraint firstAttribute="trailing" secondItem="7Io-xk-m4d" secondAttribute="trailing" constant="15" id="ITK-7a-CW8"/>
+                                                <constraint firstItem="7Io-xk-m4d" firstAttribute="top" secondItem="ln2-eB-9RN" secondAttribute="top" constant="5" id="OaP-sY-36e"/>
                                                 <constraint firstItem="wE0-Bq-Odw" firstAttribute="leading" secondItem="ln2-eB-9RN" secondAttribute="leading" constant="15" id="kdd-hf-VCy"/>
                                                 <constraint firstAttribute="bottom" secondItem="wE0-Bq-Odw" secondAttribute="bottom" constant="15" id="tHO-Vi-n6U"/>
+                                                <constraint firstAttribute="bottom" secondItem="7Io-xk-m4d" secondAttribute="bottom" constant="5" id="yaU-zb-gLd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="wE0-Bq-Odw" id="sPi-bY-wbu"/>
+                                            <outlet property="viewContactButton" destination="7Io-xk-m4d" id="Ed6-ue-eFG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -68,7 +79,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="BuV-LD-uQD"/>
+                    <navigationItem key="navigationItem" title="Employees" id="BuV-LD-uQD"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Rhy-tb-uPw" id="kIv-V0-eLt"/>
                         <outlet property="employeeTableView" destination="IbF-OB-Q6t" id="Zk5-7G-iPw"/>
@@ -246,9 +257,22 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vz-CD-Roa">
+                                <rect key="frame" x="141.5" y="577" width="92" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="92" id="jor-i6-wcn"/>
+                                    <constraint firstAttribute="height" constant="30" id="mee-MH-jef"/>
+                                </constraints>
+                                <state key="normal" title="View Contact"/>
+                                <connections>
+                                    <action selector="viewContactButtonPressed:" destination="Z4B-fD-5F9" eventType="touchUpInside" id="zE7-T2-wUD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="3Vz-CD-Roa" firstAttribute="centerX" secondItem="m5A-LF-mH3" secondAttribute="centerX" id="38x-Ub-cPR"/>
+                            <constraint firstItem="YvO-6e-EYz" firstAttribute="bottom" secondItem="3Vz-CD-Roa" secondAttribute="bottom" constant="60" id="IYm-cr-p6y"/>
                             <constraint firstItem="Rx9-NA-fbj" firstAttribute="leading" secondItem="YvO-6e-EYz" secondAttribute="leading" id="Izh-Xx-zKX"/>
                             <constraint firstItem="Rx9-NA-fbj" firstAttribute="top" secondItem="YvO-6e-EYz" secondAttribute="top" id="P2Z-Eh-xqy"/>
                             <constraint firstItem="YvO-6e-EYz" firstAttribute="trailing" secondItem="Rx9-NA-fbj" secondAttribute="trailing" id="eme-F3-dSd"/>
@@ -264,6 +288,7 @@
                         <outlet property="phoneView" destination="BQy-oP-QNF" id="j4f-gZ-tQh"/>
                         <outlet property="positionLabel" destination="C6d-LL-wKT" id="SHA-G9-sZd"/>
                         <outlet property="positionView" destination="LIG-g7-0sM" id="JIe-oz-vEk"/>
+                        <outlet property="viewContactButton" destination="3Vz-CD-Roa" id="uB0-ey-l90"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z0n-wb-CCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
