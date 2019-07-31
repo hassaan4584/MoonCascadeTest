@@ -53,7 +53,7 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
                 self?.refreshControl.endRefreshing()
 
                 if let errStr = errStr {
-                    print(errStr)
+                    self?.showAlert(with: "Error", errStr)
                 } else {
                    self?.employeeList = empContainer?.employeeList.sorted(by: { (e1, e2) -> Bool in
                         e1.completeName < e2.completeName
@@ -93,10 +93,11 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
         return 30.0
     }
     
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if let keys = self.groupedEmployeeList?.keys.sorted(by: {$0.rawValue < $1.rawValue}) {
             for (index, key) in keys.enumerated() {
                 if index == section {
+                    print(index)
                     return key.rawValue.uppercased()
                 }
             }
