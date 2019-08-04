@@ -39,6 +39,7 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
         refreshControl.attributedTitle = NSAttributedString.init(string: "Loading Employees")
 
         self.fetchEmployeeList()
+        self.employeeList = Utils.getEmployeesLocally()
     }
     
     // MARK: API Requests

@@ -21,8 +21,8 @@ enum EmployeePostion: String {
 // MARK: - Employee
 
 struct EmployeeContainer: Decodable {
+
     let employeeList: [Employee]
-    let groupedEmployeeList : [EmployeePostion: [Employee]]
     
     enum CodingKeys: String, CodingKey {
         case employeeList = "employees"
@@ -31,9 +31,8 @@ struct EmployeeContainer: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         employeeList = try container.decode([Employee].self, forKey: .employeeList)
-        
-        groupedEmployeeList = Dictionary(grouping: employeeList) { $0.position }
     }
+    
 }
 
 struct Employee: Decodable {

@@ -23,11 +23,8 @@ class Utils {
             try contactStore.enumerateContacts(with: request) {
                 (contact, stop) in
                 // Array containing all unified contacts from everywhere
-                print(contact)
-                //                contact.
                 contacts.append(contact)
             }
-            //            print(contacts)
         }
         catch {
             print("unable to fetch contacts")
@@ -46,4 +43,26 @@ class Utils {
         return completeNames
 
     }
+    
+    // MARK: Save and retrieve employee data
+    
+    /// Save json data of employees in UserDefaults
+    static func saveEmployees(withJsonData data: Data?) {
+        UserDefaults.standard.set(data, forKey: Constants.EMPLOYEE_DATA_KEY)
+    }
+    
+    /// Retrieve list of employess from UserDefaults
+    static func getEmployeesLocally() -> [Employee]? {
+        guard let responseData = UserDefaults.standard.object(forKey: Constants.EMPLOYEE_DATA_KEY) as? Data else {
+            return nil
+        }
+        do {
+            let apiResponse = try JSONDecoder().decode(EmployeeContainer.self, from: responseData)
+            return apiResponse.employeeList
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+
 }
