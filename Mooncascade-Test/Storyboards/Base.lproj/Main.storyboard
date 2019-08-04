@@ -65,16 +65,17 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="QhL-SI-9AH"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Rhy-tb-uPw">
-                                <rect key="frame" x="0.0" y="323" width="375" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Rhy-tb-uPw">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IbF-OB-Q6t" secondAttribute="bottom" id="A61-eY-buP"/>
+                            <constraint firstItem="Rhy-tb-uPw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SDf-Uf-3Gj"/>
                             <constraint firstItem="IbF-OB-Q6t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aDA-bC-Cy3"/>
                             <constraint firstItem="IbF-OB-Q6t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dNS-KR-Nnc"/>
+                            <constraint firstItem="Rhy-tb-uPw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dcG-g3-geN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IbF-OB-Q6t" secondAttribute="trailing" id="iDR-9p-53Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
