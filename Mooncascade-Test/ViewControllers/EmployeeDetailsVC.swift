@@ -10,6 +10,8 @@ import UIKit
 
 class EmployeeDetailsVC: UIViewController {
 
+    @IBOutlet weak var mainStackView: UIStackView!
+    @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var emailView: UIView!
     @IBOutlet weak var phoneView: UIView!
@@ -40,11 +42,23 @@ class EmployeeDetailsVC: UIViewController {
         self.nameLabel.text = employee.completeName
         self.emailLabel.text = employee.contactDetails.email
         self.phoneNoLabel.text = employee.contactDetails.phone
+        self.phoneView.isHidden = employee.contactDetails.phone?.isEmpty ?? true
         self.positionLabel.text = employee.position.rawValue.uppercased()
-        
+        if let projects = employee.projects {
+            for projectName in projects {
+                let label = UILabel.init()
+                label.numberOfLines = 0
+                label.text = projectName
+                
+                self.mainStackView.addArrangedSubview(label)
+            }
+        }
         if let contacts = Utils.getAllContacts() {
             self.viewContactButton.isHidden = !contacts.contains(employee.completeName)
         }
+        
+        let height = mainStackView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+        self.contentViewHeightConstraint.constant = height
     }
     
 

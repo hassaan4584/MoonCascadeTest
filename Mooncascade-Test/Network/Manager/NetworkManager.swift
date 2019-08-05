@@ -22,11 +22,12 @@ struct NetworkManager {
         let employeeRequet = MoonCascadeApi.getEmployeeList
         router.request(employeeRequet) { data, response, error in
             
+
             if error != nil {
                 completion(nil, error?.localizedDescription ?? DEFAULT_NETWORK_ERROR)
                 return
             }
-            
+
             if let response = response as? HTTPURLResponse {
                 let result = handleNetworkResponse(response)
                 switch result {
@@ -38,7 +39,7 @@ struct NetworkManager {
                     }
                     do {
                         let apiResponse = try JSONDecoder().decode(EmployeeContainer.self, from: responseData)
-                        print("completion(apiResponse.homepage_sections,nil)")
+                        Utils.saveEmployees(withJsonData: responseData)
                         completion(apiResponse, nil)
                         return
                     } catch {
