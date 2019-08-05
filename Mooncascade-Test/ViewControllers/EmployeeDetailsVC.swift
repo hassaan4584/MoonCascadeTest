@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ContactsUI
 
 class EmployeeDetailsVC: UIViewController {
 
@@ -76,5 +77,13 @@ class EmployeeDetailsVC: UIViewController {
     // MARK: User Interaction
     
     @IBAction func viewContactButtonPressed(_ sender: UIButton) {
+        if let employee = employee, let contact = Utils.getNativeContact(forName: employee.completeName) {
+            let contactVC = CNContactViewController.init(forUnknownContact: contact)
+            contactVC.hidesBottomBarWhenPushed = true
+            contactVC.allowsEditing = false
+            contactVC.allowsActions = false
+            
+            self.navigationController?.pushViewController(contactVC, animated: true)
+        }
     }
 }

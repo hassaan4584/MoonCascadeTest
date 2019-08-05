@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Contacts
+import ContactsUI
 
 class EmployeeListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -155,8 +155,16 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
-    func openContactDetailPage(forEmployee: Employee) {
-        
+    func openContactDetailPage(forEmployee employee: Employee) {
+        if let contact = Utils.getNativeContact(forName: employee.completeName) {
+            let contactVC = CNContactViewController.init(forUnknownContact: contact)
+            contactVC.hidesBottomBarWhenPushed = true
+            contactVC.allowsEditing = false
+            contactVC.allowsActions = false
+            
+            self.navigationController?.pushViewController(contactVC, animated: true)
+        }
+
     }
 
 }
