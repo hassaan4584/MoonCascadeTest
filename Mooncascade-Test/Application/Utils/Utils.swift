@@ -29,7 +29,6 @@ class Utils {
         catch {
             print("unable to fetch contacts")
         }
-        print(contacts.count)
         
         var completeNames: [String]?
         

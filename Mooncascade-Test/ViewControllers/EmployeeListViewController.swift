@@ -98,11 +98,9 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
         if let keys = self.groupedEmployeeList?.keys.sorted(by: {$0.rawValue < $1.rawValue}) {
             for (index, key) in keys.enumerated() {
                 if index == section {
-                    print(index)
                     return key.rawValue.uppercased()
                 }
             }
-            
         }
         return ""
     }
