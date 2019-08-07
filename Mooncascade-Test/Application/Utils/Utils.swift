@@ -8,6 +8,7 @@
 
 import Foundation
 import Contacts
+import ContactsUI
 
 class Utils {
     
@@ -41,6 +42,29 @@ class Utils {
         }
         return completeNames
 
+    }
+    
+    public static func getNativeContact(forName name: String) -> CNContact? {
+        
+        let contactStore = CNContactStore()
+        var contacts = [CNContact]()
+
+
+        let keys = [CNContactIdentifierKey as CNKeyDescriptor, CNContactPhoneNumbersKey as CNKeyDescriptor, CNContactEmailAddressesKey as CNKeyDescriptor, CNContactViewController.descriptorForRequiredKeys(), CNContactFormatter.descriptorForRequiredKeys(for: .fullName)]
+        let request = CNContactFetchRequest(keysToFetch: keys)
+        try? contactStore.enumerateContacts(with: request) {
+            (contact, stop) in
+            // Array containing all unified contacts from everywhere
+            contacts.append(contact)
+        }
+        
+        for contact in contacts {
+            let completeName = contact.familyName + " " + contact.givenName
+            if completeName == name {
+                return contact
+            }
+        }
+        return nil
     }
     
     // MARK: Save and retrieve employee data

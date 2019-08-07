@@ -13,12 +13,10 @@ import UIKit
 
 extension UIViewController {
     
-    func showAlert(with title:String, _ message: String) {
+    func showAlert(with title:String, _ message: String, _ action: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
         
-        let oKButton = UIAlertAction.init(title: "Ok", style: .default) { (action) in
-            
-        }
+        let oKButton = UIAlertAction.init(title: "Ok", style: .default, handler: action)
         alert.addAction(oKButton)
         self.present(alert, animated: true, completion: nil)
     }

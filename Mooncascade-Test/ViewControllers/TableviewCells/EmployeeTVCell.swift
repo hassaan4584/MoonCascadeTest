@@ -21,6 +21,8 @@ class EmployeeTVCell: UITableViewCell {
             
             if let contacts = Utils.getAllContacts(), let employee = self.employee {
                 self.viewContactButton.isHidden = !contacts.contains(employee.completeName)
+            } else {
+                self.viewContactButton.isHidden = true
             }
 
         }

@@ -33,6 +33,9 @@ class EmployeeDetailsVC: UIViewController {
         // Do any additional setup after loading the view.
         
         self.updateView(with: self.employee)
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .never
+        }
     }
     
     
@@ -56,6 +59,8 @@ class EmployeeDetailsVC: UIViewController {
         }
         if let contacts = Utils.getAllContacts() {
             self.viewContactButton.isHidden = !contacts.contains(employee.completeName)
+        } else {
+            self.viewContactButton.isHidden = true
         }
         
         let height = mainStackView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
