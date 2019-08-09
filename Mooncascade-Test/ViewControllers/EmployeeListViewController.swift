@@ -119,15 +119,8 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let keys = self.groupedEmployeeList?.keys.sorted(by: {$0.rawValue < $1.rawValue}) {
-            for (index, key) in keys.enumerated() {
-                if index == section {
-                    return self.groupedEmployeeList?[key]?.count ?? 0
-                }
-            }
 
-        }
-        return 0
+        return self.getEmployees(forSection: section)?.employees?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -135,37 +128,21 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if let keys = self.groupedEmployeeList?.keys.sorted(by: {$0.rawValue < $1.rawValue}) {
-            for (index, key) in keys.enumerated() {
-                if index == section {
-                    return key.rawValue.uppercased()
-                }
-            }
-        }
-        return ""
+        return self.getEmployees(forSection: section)?.position ?? ""
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell.init()
         if let employeeCell = tableView.dequeueReusableCell(withIdentifier: "EmployeeTVCell", for: indexPath) as? EmployeeTVCell {
-            if let keys = self.groupedEmployeeList?.keys.sorted(by: {$0.rawValue < $1.rawValue}) {
-
-                for (index, key) in keys.enumerated() {
-                    if index == indexPath.section {
-                        let employee = self.groupedEmployeeList?[key]?[indexPath.row]
-                        employeeCell.employee = employee
-                        
-                        employeeCell.onViewContactPressed = { [weak self] in
-                            if let employee = employee {
-                                self?.openContactDetailPage(forEmployee: employee)
-                                print(employee.completeName)
-                            }
-                        }
-                        return employeeCell
-                    }
+            
+            if let employee = self.getEmployees(forSection: indexPath.section)?.employees?[indexPath.row] {
+                employeeCell.employee = employee
+                
+                employeeCell.onViewContactPressed = { [weak self] in
+                        self?.openContactDetailPage(forEmployee: employee)
                 }
+                return employeeCell
             }
-
         }
         
         return cell
@@ -174,14 +151,8 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if let keys = self.groupedEmployeeList?.keys.sorted(by: {$0.rawValue < $1.rawValue}) {
-            
-            for (index, key) in keys.enumerated() {
-                if index == indexPath.section {
-                    let employee = self.groupedEmployeeList?[key]?[indexPath.row]
-                    self.performSegue(withIdentifier: "employeeListToEmployeeDetailSegue", sender: employee)
-                }
-            }
+        if let employee = self.getEmployees(forSection: indexPath.section)?.employees?[indexPath.row] {
+            self.performSegue(withIdentifier: "employeeListToEmployeeDetailSegue", sender: employee)
         }
 
     }
@@ -204,7 +175,22 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
             
             self.navigationController?.pushViewController(contactVC, animated: true)
         }
-
+    }
+    
+    // MARK: Helpers
+    
+    /// get list of employees and their position/department
+    private func getEmployees(forSection section: Int) -> (employees: [Employee]?, position: String?)? {
+        
+        if let keys = self.groupedEmployeeList?.keys.sorted(by: {$0.rawValue < $1.rawValue}) {
+            for (index, key) in keys.enumerated() {
+                if index == section {
+                    let employees = self.groupedEmployeeList?[key]
+                    return (employees, key.rawValue)
+                }
+            }
+        }
+        return nil
     }
 
 }
@@ -212,6 +198,7 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
 
 // MARK: - Getters
 extension EmployeeListViewController {
+    
     /// The employee list filtered based on the text in the search bar controller
     var filtererEmployeeList: [Employee]? {
         get {
