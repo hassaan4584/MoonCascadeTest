@@ -82,19 +82,18 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
     /// Fetch Latest employee list from server
     private func fetchEmployeeList() {
         
+        self.refreshControl.endRefreshing()
         self.activityIndicator.startAnimating()
         NetworkManager.sharedInstance.getEmployeeList { [weak self] (empContainer, errStr) in
             DispatchQueue.main.async {
                 self?.activityIndicator.stopAnimating()
-                self?.refreshControl.endRefreshing()
-
                 if let errStr = errStr {
                     self?.showAlert(with: "Error", errStr, nil)
                 } else {
                    self?.employeeList = empContainer?.employeeList.sorted(by: { (e1, e2) -> Bool in
                         e1.completeName < e2.completeName
                     })
-                     
+
                     self?.employeeTableView.reloadData()
                 }
             }
