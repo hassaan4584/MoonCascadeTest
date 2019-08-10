@@ -43,7 +43,7 @@ class EmployeeDetailsVC: UIViewController {
         guard let employee = employee else {
             return
         }
-        self.nameLabel.text = employee.completeName
+        self.nameLabel.text = employee.displayName
         self.emailLabel.text = employee.contactDetails.email
         self.phoneNoLabel.text = employee.contactDetails.phone
         self.phoneView.isHidden = employee.contactDetails.phone?.isEmpty ?? true
@@ -58,7 +58,7 @@ class EmployeeDetailsVC: UIViewController {
             }
         }
         if let contacts = Utils.getAllContacts() {
-            self.viewContactButton.isHidden = !contacts.contains(employee.completeName)
+            self.viewContactButton.isHidden = !contacts.contains(employee.displayName)
         } else {
             self.viewContactButton.isHidden = true
         }
@@ -82,7 +82,7 @@ class EmployeeDetailsVC: UIViewController {
     // MARK: User Interaction
     
     @IBAction func viewContactButtonPressed(_ sender: UIButton) {
-        if let employee = employee, let contact = Utils.getNativeContact(forName: employee.completeName) {
+        if let employee = employee, let contact = Utils.getNativeContact(forName: employee.displayName) {
             let contactVC = CNContactViewController.init(forUnknownContact: contact)
             contactVC.hidesBottomBarWhenPushed = true
             contactVC.allowsEditing = false

@@ -166,7 +166,7 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func openContactDetailPage(forEmployee employee: Employee) {
-        if let contact = Utils.getNativeContact(forName: employee.completeName) {
+        if let contact = Utils.getNativeContact(forName: employee.displayName) {
             let contactVC = CNContactViewController.init(forUnknownContact: contact)
             contactVC.hidesBottomBarWhenPushed = true
             contactVC.allowsEditing = false

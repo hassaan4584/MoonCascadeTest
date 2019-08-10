@@ -69,6 +69,14 @@ struct Employee: Decodable {
             return name
         }
     }
+
+    /// FirstName + LastName
+    var displayName: String {
+        get {
+            let name = self.fname + " " + self.lname
+            return name
+        }
+    }
 }
 
 // MARK: - ContactDetails

@@ -37,7 +37,7 @@ class Utils {
             if completeNames == nil {
                 completeNames = [String]()
             }
-            let name = contact.familyName + " " + contact.givenName
+            let name = contact.givenName + " " + contact.familyName
             completeNames!.append(name)
         }
         return completeNames
@@ -50,7 +50,7 @@ class Utils {
         var contacts = [CNContact]()
 
 
-        let keys = [CNContactIdentifierKey as CNKeyDescriptor, CNContactPhoneNumbersKey as CNKeyDescriptor, CNContactEmailAddressesKey as CNKeyDescriptor, CNContactViewController.descriptorForRequiredKeys(), CNContactFormatter.descriptorForRequiredKeys(for: .fullName)]
+        let keys = [CNContactViewController.descriptorForRequiredKeys()]
         let request = CNContactFetchRequest(keysToFetch: keys)
         try? contactStore.enumerateContacts(with: request) {
             (contact, stop) in
@@ -59,7 +59,7 @@ class Utils {
         }
         
         for contact in contacts {
-            let completeName = contact.familyName + " " + contact.givenName
+            let completeName = contact.givenName + " " + contact.familyName
             if completeName == name {
                 return contact
             }

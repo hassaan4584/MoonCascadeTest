@@ -17,10 +17,10 @@ class EmployeeTVCell: UITableViewCell {
     
     var employee: Employee? {
         didSet {
-            self.nameLabel.text = self.employee?.completeName
+            self.nameLabel.text = self.employee?.displayName
             
             if let contacts = Utils.getAllContacts(), let employee = self.employee {
-                self.viewContactButton.isHidden = !contacts.contains(employee.completeName)
+                self.viewContactButton.isHidden = !contacts.contains(employee.displayName)
             } else {
                 self.viewContactButton.isHidden = true
             }
