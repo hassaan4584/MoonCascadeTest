@@ -83,7 +83,7 @@ class EmployeeDetailsVC: UIViewController {
     
     @IBAction func viewContactButtonPressed(_ sender: UIButton) {
         if let employee = employee, let contact = Utils.getNativeContact(forName: employee.displayName) {
-            let contactVC = CNContactViewController.init(forUnknownContact: contact)
+            let contactVC = CNContactViewController.init(for: contact)
             contactVC.hidesBottomBarWhenPushed = true
             contactVC.allowsEditing = false
             contactVC.allowsActions = false

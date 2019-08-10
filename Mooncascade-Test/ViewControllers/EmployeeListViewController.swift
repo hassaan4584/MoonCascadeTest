@@ -167,7 +167,7 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
     
     func openContactDetailPage(forEmployee employee: Employee) {
         if let contact = Utils.getNativeContact(forName: employee.displayName) {
-            let contactVC = CNContactViewController.init(forUnknownContact: contact)
+            let contactVC = CNContactViewController.init(for: contact)
             contactVC.hidesBottomBarWhenPushed = true
             contactVC.allowsEditing = false
             contactVC.allowsActions = false
@@ -199,7 +199,7 @@ class EmployeeListViewController: UIViewController, UITableViewDelegate, UITable
 extension EmployeeListViewController {
     
     /// The employee list filtered based on the text in the search bar controller
-    var filtererEmployeeList: [Employee]? {
+    var filteredEmployeeList: [Employee]? {
         get {
             if  (searchController.isActive) {
                 return employeeList?.filter({ (employee) -> Bool in
@@ -225,8 +225,8 @@ extension EmployeeListViewController {
     /// Grouped employess based on their positions
     var groupedEmployeeList: [EmployeePostion: [Employee]]? {
         get {
-            if let filtererEmployeeList = self.filtererEmployeeList {
-                let list = Dictionary(grouping: filtererEmployeeList ) { $0.position }
+            if let filteredEmployeeList = self.filteredEmployeeList {
+                let list = Dictionary(grouping: filteredEmployeeList ) { $0.position }
                 return list
             }
             return nil
