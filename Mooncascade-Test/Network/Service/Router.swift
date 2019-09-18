@@ -12,30 +12,50 @@ public typealias NetworkRouterCompletion = (_ data: Data?,_ response: URLRespons
 
 protocol NetworkRouter: class {
     associatedtype EndPoint: EndPointType
-    func request(_ route: EndPoint, completion: @escaping NetworkRouterCompletion)
+    func request<T:Codable>(_ route: EndPoint, completion: @escaping (Result<T, Error>) -> (Void))
     func cancel()
+
 }
 
 class Router<EndPoint: EndPointType>: NetworkRouter {
     private var task: URLSessionTask?
     
-    func request(_ route: EndPoint, completion: @escaping NetworkRouterCompletion) {
+    func request<T: Codable>(_ route: EndPoint, completion: @escaping (Result<T, Error>) ->()) {
+        var result: Result<T, Error> = .failure(NetworkError.missingURL)
         let session = URLSession.shared
+
         do {
             let request = try self.buildRequest(from: route)
             NetworkLogger.log(request: request)
-            task = session.dataTask(with: request, completionHandler: { data, response, error in
-                DispatchQueue.main.async {
-                    completion(data, response, error)
+            task = session.dataTask(with: request, completionHandler: { (data, response, error) in
+                if let error = error {
+                    result = .failure(error)
                 }
+                else if let data = data {
+                    do {
+                        let decoder = JSONDecoder()
+                        let obj = try decoder.decode(T.self, from: data)
+                        result = .success(obj)
+                    } catch {
+                        result = .failure(error)
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    completion(result)
+                }
+
             })
         }catch {
             DispatchQueue.main.async {
-                completion(nil, nil, error)
+                completion(result)
             }
         }
+        
+        
         self.task?.resume()
     }
+    
     
     func cancel() {
         self.task?.cancel()

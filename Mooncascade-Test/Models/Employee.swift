@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum EmployeePostion: String {
+enum EmployeePostion: String, Codable {
     case iOS    = "IOS"
     case android = "ANDROID"
     case web    = "WEB"
@@ -20,7 +20,7 @@ enum EmployeePostion: String {
 
 // MARK: - Employee
 
-struct EmployeeContainer: Decodable {
+struct EmployeeContainer: Codable {
 
     let employeeList: [Employee]
     
@@ -35,7 +35,7 @@ struct EmployeeContainer: Decodable {
     
 }
 
-struct Employee: Decodable {
+struct Employee: Codable {
     let fname:  String
     let lname:  String
     let position:   EmployeePostion
@@ -80,7 +80,7 @@ struct Employee: Decodable {
 }
 
 // MARK: - ContactDetails
-struct ContactDetails: Decodable {
+struct ContactDetails: Codable {
     let email: String
     let phone: String?
     

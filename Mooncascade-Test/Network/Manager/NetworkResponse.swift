@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Result<String> {
+enum MyResult<String> {
     case success
     case failure(String)
 }
@@ -26,7 +26,7 @@ enum NetworkResponse: String {
 
 }
 
-func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String>{
+func handleNetworkResponse(_ response: HTTPURLResponse) -> MyResult<String>{
     switch response.statusCode {
     case 200...299: return .success
     case 405: return .failure("\(response.statusCode) " + NetworkResponse.methodNotAllowed.rawValue)

@@ -20,37 +20,49 @@ struct NetworkManager {
     
     func getEmployeeList(completion: @escaping (_ employeeContainer: EmployeeContainer?,_ error: String?)->()) {
         let employeeRequet = MoonCascadeApi.getEmployeeList
-        router.request(employeeRequet) { data, response, error in
-            
-
-            if error != nil {
-                completion(nil, error?.localizedDescription ?? DEFAULT_NETWORK_ERROR)
-                return
-            }
-
-            if let response = response as? HTTPURLResponse {
-                let result = handleNetworkResponse(response)
-                switch result {
-                case .success:
-                    guard let responseData = data else {
-                        print("completion(nil, NetworkResponse.noData.rawValue)")
-                        completion(nil, NetworkResponse.noData.rawValue)
-                        return
-                    }
-                    do {
-                        let apiResponse = try JSONDecoder().decode(EmployeeContainer.self, from: responseData)
-                        Utils.saveEmployees(withJsonData: responseData)
-                        completion(apiResponse, nil)
-                        return
-                    } catch {
-                        print("completion(nil, NetworkResponse.unableToDecode.rawValue)")
-                        completion(nil, NetworkResponse.unableToDecode.rawValue)
-                    }
-                case .failure(let networkFailureError):
-                    completion(nil, networkFailureError)
-                }
+        
+        router.request(employeeRequet) { (result: Result<EmployeeContainer, Error>) in
+            switch result{
+            case .success(let container):
+                print("Employee")
+                print(container.employeeList)
+                completion(container, nil)
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion(nil, error.localizedDescription)
             }
         }
+//        router.request(employeeRequet) { data, response, error in
+//
+//
+//            if error != nil {
+//                completion(nil, error?.localizedDescription ?? DEFAULT_NETWORK_ERROR)
+//                return
+//            }
+//
+//            if let response = response as? HTTPURLResponse {
+//                let result = handleNetworkResponse(response)
+//                switch result {
+//                case .success:
+//                    guard let responseData = data else {
+//                        print("completion(nil, NetworkResponse.noData.rawValue)")
+//                        completion(nil, NetworkResponse.noData.rawValue)
+//                        return
+//                    }
+//                    do {
+//                        let apiResponse = try JSONDecoder().decode(EmployeeContainer.self, from: responseData)
+//                        Utils.saveEmployees(withJsonData: responseData)
+//                        completion(apiResponse, nil)
+//                        return
+//                    } catch {
+//                        print("completion(nil, NetworkResponse.unableToDecode.rawValue)")
+//                        completion(nil, NetworkResponse.unableToDecode.rawValue)
+//                    }
+//                case .failure(let networkFailureError):
+//                    completion(nil, networkFailureError)
+//                }
+//            }
+//        }
     }
     
     
