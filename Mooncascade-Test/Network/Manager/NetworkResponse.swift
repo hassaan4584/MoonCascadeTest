@@ -26,6 +26,29 @@ enum NetworkResponse: String {
 
 }
 
+enum ResponseError: Error, LocalizedError {
+    case success
+    case authenticationError
+    case badRequest
+    case outdated
+    case failed
+    case noData
+    case unableToDecode
+    case methodNotAllowed
+    case internalServerError
+    
+    public var errorDescription: String? {
+        switch self {
+        case .success:
+            return NSLocalizedString("Success", comment: "success")
+        case .unableToDecode:
+            return NSLocalizedString("We could not decode the response", comment: "Unable to decode")
+        default:
+            return NSLocalizedString("Some error occured", comment: "error occured")
+        }
+    }
+}
+
 func handleNetworkResponse(_ response: HTTPURLResponse) -> MyResult<String>{
     switch response.statusCode {
     case 200...299: return .success

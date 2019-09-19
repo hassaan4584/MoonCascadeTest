@@ -34,24 +34,22 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
                 else if let data = data {
                     do {
                         let decoder = JSONDecoder()
-                        let obj = try decoder.decode(T.self, from: data)
-                        result = .success(obj)
+                        result = .success(try decoder.decode(T.self, from: data))
                     } catch {
-                        result = .failure(error)
+                        print(error)
+                        result = .failure(ResponseError.unableToDecode)
                     }
                 }
                 
                 DispatchQueue.main.async {
                     completion(result)
                 }
-
             })
         }catch {
             DispatchQueue.main.async {
                 completion(result)
             }
         }
-        
         
         self.task?.resume()
     }
